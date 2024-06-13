@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Add Book</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.title.label }}<br>
+            {{ form.title(size=32) }}
+        </p>
+        <p>
+            {{ form.author.label }}<br>
+            {{ form.author(size=32) }}
+        </p>
+        <p>
+            {{ form.year.label }}<br>
+            {{ form.year(size=32) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    <a href="{{ url_for('index') }}">Back to List</a>
+{% endblock %}
